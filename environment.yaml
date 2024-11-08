@@ -16,8 +16,8 @@ dependencies:
   - requests-cache
   - pyodbc
   - ipykernel
-  - pprint
-  - json
+  - urllib
+  - math
   - pip
   - pip:
     - openmeteo_requests
