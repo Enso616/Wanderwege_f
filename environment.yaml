@@ -23,3 +23,4 @@ dependencies:
     - openmeteo_requests
     - retry-requests
     - opencage
+    - rapidfuzz
