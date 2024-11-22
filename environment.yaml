@@ -22,3 +22,4 @@ dependencies:
     - retry-requests
     - opencage
     - rapidfuzz
+    - azure-functions
