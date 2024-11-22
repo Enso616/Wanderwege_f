@@ -1,8 +1,7 @@
 import logging
 import datetime
-import azure.functions as func
 
-# Beispiel für die function, die im Azure Function Timer-Trigger ausgeführt wird
+# Beispiel für eine einfache Funktion, die lokal aufgerufen wird
 def example_function():
     # Berechnungen
     a = 5
@@ -21,14 +20,19 @@ def example_function():
     
     return "Hello from example_function!"
 
-# Hauptfunktion, die bei einem Timer-Trigger von Azure aufgerufen wird
-def main(timer: func.TimerRequest) -> None:
-    """
-    Diese Funktion wird durch den Timer-Trigger von Azure aufgerufen.
-    """
-    utc_timestamp = timer.schedule_status.last
+
+# Hauptfunktion, die bei einem Timer-Trigger in Azure aufgerufen wird
+def main():
+    # Simuliertes Timestamp
+    utc_timestamp = datetime.datetime.utcnow()
     logging.info(f"Timer trigger executed at {utc_timestamp}")
 
-    # Aufruf der example_function
+    # Rufe die example_function auf
     result = example_function()
     logging.info(f"example_function hat folgendes zurückgegeben: {result}")
+
+
+if __name__ == "__main__":
+    # Führe die Funktion lokal aus
+    logging.basicConfig(level=logging.INFO)
+    main()
