@@ -4,22 +4,16 @@ import azure.functions as func
 
 # Beispiel für die function, die im Azure Function Timer-Trigger ausgeführt wird
 def example_function():
-    # Berechnungen
-    a = 5
-    b = 10
-    result = a + b
-    
-    # Logging der Berechnung
-    logging.info(f"Demo Calculation: {a} + {b} = {result}")
-    
-    # Logging der aktuellen Zeit
-    logging.info("Current time: %s", str(datetime.datetime.now()))
-    
-    # Erfolgreiche Ausführung
-    logging.info("Successfully executed.")
-    logging.info("Die example_function wurde ausgeführt.")
-    
-    return "Hello from example_function!"
+    try:
+        # Deine Berechnungen
+        a = 5
+        b = 10
+        result = a + b
+        logging.info(f"Demo Calculation: {a} + {b} = {result}")
+        return "Hello from example_function!"
+    except Exception as e:
+        logging.error(f"Error in example_function: {str(e)}")
+        return "Error"
 
 # Hauptfunktion, die bei einem Timer-Trigger von Azure aufgerufen wird
 def main(timer: func.TimerRequest) -> None:
