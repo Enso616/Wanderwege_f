@@ -1,0 +1,17 @@
+pandas
+sqlalchemy
+mysql-connector-python
+overpy
+pymysql
+pymssql
+numpy
+matplotlib
+seaborn
+requests
+requests-cache
+pyodbc
+ipykernel
+openmeteo_requests
+retry-requests
+opencage
+rapidfuzz
