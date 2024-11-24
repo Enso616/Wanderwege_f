@@ -12,7 +12,7 @@ def main(mytimer: func.TimerRequest) -> None:
     a = 5
     b = 20
     c= a*b
-    logging.info(f"Result c:"{c})    
+    logging.info(f"Result c: {c}")    
 
     if mytimer.past_due:
         logging.info('The timer is past due!')
